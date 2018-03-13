@@ -105,3 +105,6 @@ Defaults to `.env.example.yml`.
 Based on the work of [Robert Wells (env-yaml)](https://github.com/jrwells/env-yaml) and [Rodrigo López Dato (dotenv-safe)](https://github.com/rolodato/dotenv-safe).
 
 I came across dotenv-safe and would it to add to my existing project but I'm using YAML-based configuration so I ported dotenv-safe using env-yaml as its parser. This is useful for NodeJS apps that can be morphed to use [Serverless Framework](https://serverless.com).
+
+# Notable differences agains `dotenv-safe`
+* Allowed empty values are returned as `null` instead of empty string
