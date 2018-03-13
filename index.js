@@ -1,6 +1,6 @@
 'use strict';
 
-const dotenv = require('dotenv');
+const dotenv = require('env-yaml');
 const fs = require('fs');
 const MissingEnvVarsError = require('./MissingEnvVarsError.js');
 
@@ -21,14 +21,14 @@ function compact (obj) {
 module.exports = {
     config: function(options = {}) {
         const dotenvResult = dotenv.load(options);
-        const example = options.example || options.sample || '.env.example';
+        const example = options.example || options.sample || '.env.example.yml';
         const allowEmptyValues = options.allowEmptyValues || false;
         const processEnv = allowEmptyValues ? process.env : compact(process.env);
         const exampleVars = dotenv.parse(fs.readFileSync(example));
         const missing = difference(Object.keys(exampleVars), Object.keys(processEnv));
 
         if (missing.length > 0) {
-            throw new MissingEnvVarsError(allowEmptyValues, options.path || '.env', example, missing, dotenvResult.error);
+            throw new MissingEnvVarsError(allowEmptyValues, options.path || '.env.yml', example, missing, dotenvResult.error);
         }
 
         // Key/value pairs defined in example file and resolved from environment

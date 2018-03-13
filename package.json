@@ -1,34 +1,35 @@
 {
-  "name": "dotenv-safe",
-  "version": "5.0.1",
-  "description": "Load environment variables from .env and ensure they are defined",
-  "keywords": [
-    "dotenv"
-  ],
-  "license": "MIT",
-  "author": "Rodrigo López Dato <rolodato@rolodato.com>",
-  "files": [
-    "index.js",
-    "config.js",
-    "MissingEnvVarsError.js"
-  ],
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/rolodato/dotenv-safe.git"
-  },
-  "scripts": {
-    "pretest": "./node_modules/eslint/bin/eslint.js index.js config.js MissingEnvVarsError.js test/.",
-    "test": "HELLO=fromTheOtherSide mocha"
-  },
-  "dependencies": {
-    "dotenv": "^5.0.0"
-  },
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "eslint": "^3.12.2",
-    "fs-extra": "^1.0.0",
-    "lodash.clonedeep": "^4.5.0",
-    "mocha": "^2.4.5"
-  }
+    "name": "dotenv-yaml-safe",
+    "version": "1.0.0",
+    "description": "Load environment variables from .env.yml and ensure they are defined",
+    "keywords": [
+        "dotenv",
+        "yml"
+    ],
+    "license": "MIT",
+    "author": "Edmandie Samonte (edmandie.samonte@gmail.com)",
+    "files": [
+        "index.js",
+        "config.js",
+        "MissingEnvVarsError.js"
+    ],
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:edsamonte/dotenv-yaml-safe.git"
+    },
+    "scripts": {
+        "pretest": "./node_modules/eslint/bin/eslint.js index.js config.js MissingEnvVarsError.js test/.",
+        "test": "HELLO=fromTheOtherSide mocha"
+    },
+    "dependencies": {
+        "env-yaml": "^0.1.2"
+    },
+    "devDependencies": {
+        "chai": "^3.5.0",
+        "eslint": "^3.12.2",
+        "fs-extra": "^1.0.0",
+        "lodash.clonedeep": "^4.5.0",
+        "mocha": "^2.4.5"
+    }
 }
